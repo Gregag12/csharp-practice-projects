@@ -25,7 +25,7 @@ public class Number
     //DONE: Create a method `IsEven(int number)` that returns `true` if the number is even.  
     public string IsEven(int number)
     {
-        if (number % 2 = 0)
+        if (number % 2 == 0)
         {
             return $"{number} is even"; // returns even number
         }
