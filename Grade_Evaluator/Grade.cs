@@ -6,8 +6,6 @@
 //TODO: Repeats until the user exists
 
 using System;
-using System.Security.Cryptography.X509Certificates;
-
 public class Grade
 {
     public int Score { get; set; }
@@ -24,22 +22,15 @@ public class Grade
         switch (a) //Checks if the integer is between 0-100
         {
             case >= 90:
-                Console.WriteLine("A");
-                break;
+                return "A";
             case >= 80 and < 90:
-                Console.WriteLine("B");
-                break;
+                return "B";
             case >= 70 and < 80:
-                Console.WriteLine("C");
-                break;
+                return "C";
             case >= 60 and < 70:
-                Console.WriteLine("D");
-                break;
-            case < 60:
-                Console.WriteLine("F");
+                return "D";
             default:
-                Console.WriteLine("Please enter a valid number grade");
-                break;
+                return "F";
         }
     }
 

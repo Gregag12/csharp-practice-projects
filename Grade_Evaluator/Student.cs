@@ -5,42 +5,34 @@ public class Student
     public string FirstName { get; set; }
     public string LastName { get; set; }
 
-    public Dictionary<SubjectEnum, Grade> Grades = new Dictionary<SubjecEnum, Grade>();
+    public Dictionary<SubjectName, Grade> Grades = new Dictionary<SubjectName, Grade>();
 
 
-    public Student (string firstName, string lastName)
+
+    public Student(string firstName, string lastName)
     {
         FirstName = firstName;
         LastName = lastName;
     }
-    public string GetStudentName()
+    public void GetStudentName()
     {
-        //Get name of student so it can be stored in a list of students/subject grades
-        Console.WriteLine("Enter the student's First name: ");
-        string studentFirstName = Console.ReadLine();
-
-        //Checks if First Name is empty or a space and prompts user to enter a valid name
-        while (string.IsNullOrWhiteSpace(studentFirstName))
+        Console.Write("Enter the student's first name: ");
+        FirstName = Console.ReadLine() ?? string.Empty;
+        while (string.IsNullOrWhiteSpace(FirstName))
         {
-            Console.Write("Name cannont be empty. Please enter a name.");
-            studentFirstName = Console.ReadLine();
+            Console.Write("Name cannot be empty. Please enter a first name: ");
+            FirstName = Console.ReadLine() ?? string.Empty;
         }
-        return studentFirstName;
 
-        Console.WriteLine("Enter the student's last name: ");
-        string studentLastName = Console.ReadLine();
-
-        //Checks if Last Name is empty or a space and prompts user to enter a valid name
-        while (string.IsNullOrWhiteSpace(studentLastName))
+        Console.Write("Enter the student's last name: ");
+        LastName = Console.ReadLine() ?? string.Empty;
+        while (string.IsNullOrWhiteSpace(LastName))
         {
-            Console.Write("Name cannont be empty. Please enter a name.");
-            studentLastName = Console.ReadLine();
+            Console.Write("Name cannot be empty. Please enter a last name: ");
+            LastName = Console.ReadLine() ?? string.Empty;
         }
-        return studentLastName;
-
-        string name = studentFirstName + studentLastName;
     }
-    
+
     // Returns the full name of the student
     public string GetFullName()
     {

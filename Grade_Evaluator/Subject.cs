@@ -8,7 +8,7 @@ public class Subject
     {
         ClassName = className;
     }
-    
+
     // Prints a list of possible subjects
     public void SelectSubjectFromList()
     {
@@ -22,16 +22,17 @@ public class Subject
 
     public string GetSubjectName()
     {
-        //Get name of subject so it can be stored in a list of students/subject grades
-        Console.WriteLine("Enter the subject: ");
-        string subject = Console.ReadLine();
+        // Prompt user
+        Console.Write("Enter the subject: ");
+        string? subject = Console.ReadLine() ?? string.Empty; // Ensure non-null
 
-        //Checks if name is empty or a space and prompts user to enter a valid name
+        // Validate input
         while (string.IsNullOrWhiteSpace(subject))
         {
-            Console.Write("Subject cannont be empty. Please enter a valid subject.");
-            subject = Console.ReadLine();
+            Console.Write("Subject cannot be empty. Please enter a valid subject: ");
+            subject = Console.ReadLine() ?? string.Empty; // Ensure non-null
         }
+
         return subject;
     }
 }
