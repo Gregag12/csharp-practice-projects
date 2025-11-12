@@ -7,8 +7,6 @@ public class Student
 
     public Dictionary<SubjectName, Grade> Grades = new Dictionary<SubjectName, Grade>();
 
-
-
     public Student(string firstName, string lastName)
     {
         FirstName = firstName;
